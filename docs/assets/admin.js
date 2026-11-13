@@ -26,7 +26,7 @@ function get(form, name) {
 }
 
 async function request(method, payload) {
-  const headers = {Authorization: `Bearer ${key}`};
+  const headers = {Authorization: `DuneKey ${encodeURIComponent(key)}`};
   if (payload) headers['Content-Type'] = 'application/json';
   let response;
   try {
@@ -193,7 +193,7 @@ function save(next, message, onSuccess) {
 loginForm.addEventListener('submit', event => {
   event.preventDefault();
   if (busy) return;
-  key = get(loginForm, 'key').value.trim();
+  key = get(loginForm, 'key').value;
   run(async () => {
     try {
       await request('GET');

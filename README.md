@@ -29,7 +29,7 @@ A website for the beach house at 135 Sand Pine Drive in Barrier Dunes, Cape San 
 
 ## 3. Set up owner access and inquiries
 
-1. Generate a random key in your password manager, or run `openssl rand -hex 24` on your computer. Save the resulting key in your password manager.
+1. Choose a password for the owner dashboard and save it in your password manager. The password field requires a value and has no minimum length.
 2. In Netlify, open **Project configuration → Environment variables** and add `DUNE_ADMIN_KEY` with that value. Mark it as secret if the option is shown. Choose **Production** as the deploy context and **Functions** if scope selection is available. Store the key only in Netlify and your password manager.
 3. In **Forms**, select **Enable form detection** if needed. Under **Deploys**, trigger a new production deploy so Netlify picks up the key and scans the form.
 4. In **Forms → Submission notifications**, add an email notification for `booking-inquiry`. Use the email address your dad wants to receive inquiries at. Complete the confirmation if Netlify sends one.

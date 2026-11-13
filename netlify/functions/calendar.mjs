@@ -10,7 +10,7 @@ const validAmount = amount => Number.isInteger(amount) && amount >= 100 && amoun
 
 function authorize(req, key) {
   const auth = req.headers.get('authorization') || '';
-  return timingSafeEqual(hash(auth), hash(`Bearer ${key}`));
+  return timingSafeEqual(hash(auth), hash(`DuneKey ${encodeURIComponent(key)}`));
 }
 
 function json(body, status = 200) {
@@ -46,7 +46,7 @@ export function calendarHandler(getCalendarStore, ownerKey, allowOwnerEdits) {
     }
     if (req.method === 'PUT' && !owner) return json({error: 'Sign in to change the calendar.'}, 401);
     if (owner) {
-      if (!allowOwnerEdits || !ownerKey || ownerKey.length < 32) {
+      if (!allowOwnerEdits || !ownerKey) {
         return json({error: 'The owner key is configured on the production Netlify deployment.'}, 503);
       }
       if (!authorize(req, ownerKey)) return json({error: 'The owner key did not match.'}, 401);
