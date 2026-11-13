@@ -1,1 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="15" fill="#193d3a"/><circle cx="32" cy="25" r="9" fill="#e6b487"/><path d="M10 36c7 0 7-4 14-4s9 4 16 4 7-4 14-4M10 44c7 0 7-4 14-4s9 4 16 4 7-4 14-4" fill="none" stroke="#faf6ed" stroke-width="2.4" stroke-linecap="round"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <clipPath id="cape-seal-landscape">
+      <circle cx="50" cy="50" r="36"/>
+    </clipPath>
+  </defs>
+  <circle cx="50" cy="50" r="46" fill="#193b37"/>
+  <g clip-path="url(#cape-seal-landscape)" transform="translate(0 100) scale(1 -1)">
+    <circle cx="65" cy="65" r="12" fill="#e6b487"/>
+    <path d="M7 27 C32 26 35 68 55 49 C72 32 78 37 95 39 V0 H7 Z" fill="#f8f5ee"/>
+    <path d="M7 10 C32 4 53 41 95 26 V0 H7 Z" fill="#e6b487"/>
+  </g>
+</svg>
