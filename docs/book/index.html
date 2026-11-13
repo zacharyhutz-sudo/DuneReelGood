@@ -15,13 +15,14 @@
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="brand" href="../" aria-label="DuneReelGood home"><img src="../assets/favicon.svg" width="36" height="36" alt=""><span>DuneReel<span>Good</span></span></a>
-    <nav aria-label="Main navigation"><a href="../#house">The house</a><a href="../#photos">Photos</a><a href="../guide/">Local guide</a><a class="button button-small" href="../book/" aria-current="page">Check availability <span aria-hidden="true">→</span></a></nav>
+    <nav aria-label="Main navigation"><a href="../#house">The house</a><a href="../#photos">Photos</a><a href="../guide/">Local guide</a><a class="button button-small" href="../book/" aria-current="page"><span class="nav-label-long">Check availability</span><span class="nav-label-short">Check dates</span> <span aria-hidden="true">→</span></a></nav>
   </div>
 </header>
 <main id="main">
   <div class="page-intro"><div class="wrap"><p class="eyebrow">DuneReelGood · Cape San Blas</p><h1>Plan your stay.</h1><p>Choose your dates and send a booking inquiry for up to six guests.</p></div></div>
   <section class="wrap booking-layout" aria-label="Availability and booking inquiry">
-    <div class="panel">
+    <div class="panel availability-panel">
+      <p class="eyebrow panel-step">01 / Find your dates</p>
       <h2>Availability</h2>
       <p id="calendar-status" role="status">Loading availability…</p>
       <noscript><p>Enable JavaScript to use the calendar and send an inquiry.</p></noscript>
@@ -34,9 +35,10 @@
         <table class="calendar" aria-labelledby="month-label"><thead><tr><th scope="col" abbr="Sunday">Su</th><th scope="col" abbr="Monday">Mo</th><th scope="col" abbr="Tuesday">Tu</th><th scope="col" abbr="Wednesday">We</th><th scope="col" abbr="Thursday">Th</th><th scope="col" abbr="Friday">Fr</th><th scope="col" abbr="Saturday">Sa</th></tr></thead><tbody id="calendar-days"></tbody></table>
         <ul class="calendar-key"><li><span class="key-available"></span>Available</li><li><span class="key-blocked"></span>Unavailable</li><li><span class="key-picked"></span>Selected</li></ul>
       </div>
-      
+      <div class="stay-summary"><img src="../assets/deck.webp" width="1200" height="800" loading="lazy" alt="Dining deck at DuneReelGood"><div><h3>A little room to unwind.</h3><p>6 guests · 2 bedrooms · 2 bathrooms</p><p>Gulf views in Barrier Dunes</p></div></div>
     </div>
     <div class="panel" id="inquiry">
+      <p class="eyebrow panel-step">02 / Get in touch</p>
       <h2>Booking inquiry</h2>
       <p>We’ll confirm availability and the final price before you book.</p>
       <form name="booking-inquiry" method="POST" action="/success/" data-netlify="true" netlify-honeypot="bot-field">
@@ -61,10 +63,11 @@
 </main>
 <footer class="site-footer">
   <div class="wrap footer-inner">
-    <div><a class="brand" href="../" aria-label="DuneReelGood home"><img src="../assets/favicon.svg" width="36" height="36" alt=""><span>DuneReel<span>Good</span></span></a><p>Cape San Blas, Florida</p></div>
-    <div><a href="https://www.google.com/maps/search/?api=1&query=135+Sand+Pine+Drive+Port+St+Joe+FL">135 Sand Pine Drive →</a></div>
-    <div><a href="../guide/">Local guide</a><a href="../book/">Check availability</a></div>
+    <div><a class="brand" href="../" aria-label="DuneReelGood home"><img src="../assets/favicon.svg" width="36" height="36" alt=""><span>DuneReel<span>Good</span></span></a><p>A little closer to the Gulf.<br>Cape San Blas, Florida</p></div>
+    <div><p class="footer-label">Find us</p><a href="https://www.google.com/maps/search/?api=1&amp;query=135+Sand+Pine+Drive+Port+St+Joe+FL">135 Sand Pine Drive <span aria-hidden="true">→</span><br><span class="footer-address">Port St. Joe, FL</span></a></div>
+    <div><p class="footer-label">Plan your stay</p><a href="../#house">The house</a><a href="../guide/">Local guide</a><a href="../book/">Check availability <span aria-hidden="true">→</span></a></div>
   </div>
+  <div class="wrap footer-bottom"><small>© DuneReelGood</small><p class="design-credit">DESIGN BY <strong>HUTZELL CREATIVE CO</strong></p></div>
 </footer>
 </body>
 </html>
