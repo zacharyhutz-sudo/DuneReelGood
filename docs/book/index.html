@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Check DuneReelGood availability and inquire about a stay in Cape San Blas.">
+  
+  <title>Check Availability | DuneReelGood</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/site.css">
+  <script type="module" src="../assets/booking.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../" aria-label="DuneReelGood home"><img src="../assets/favicon.svg" width="36" height="36" alt=""><span>DuneReel<span>Good</span></span></a>
+    <nav aria-label="Main navigation"><a href="../#house">The house</a><a href="../#photos">Photos</a><a href="../guide/">Local guide</a><a class="button button-small" href="../book/" aria-current="page">Check availability <span aria-hidden="true">→</span></a></nav>
+  </div>
+</header>
+<main id="main">
+  <div class="page-intro"><div class="wrap"><p class="eyebrow">DuneReelGood · Cape San Blas</p><h1>Plan your stay.</h1><p>Choose your dates and send a booking inquiry for up to six guests.</p></div></div>
+  <section class="wrap booking-layout" aria-label="Availability and booking inquiry">
+    <div class="panel">
+      <h2>Availability</h2>
+      <p id="calendar-status" role="status">Loading availability…</p>
+      <noscript><p>Enable JavaScript to use the calendar, or <a href="https://www.thecapeescape.com/cape-san-blas-vacation-rentals/dune-reel-good/">check the Cape Escape listing</a>.</p></noscript>
+      <div id="calendar" hidden>
+        <div class="calendar-nav">
+          <button id="month-prev" class="round-button" type="button" aria-label="Previous month">←</button>
+          <h3 id="month-label" aria-live="polite"></h3>
+          <button id="month-next" class="round-button" type="button" aria-label="Next month">→</button>
+        </div>
+        <table class="calendar" aria-labelledby="month-label"><thead><tr><th scope="col" abbr="Sunday">Su</th><th scope="col" abbr="Monday">Mo</th><th scope="col" abbr="Tuesday">Tu</th><th scope="col" abbr="Wednesday">We</th><th scope="col" abbr="Thursday">Th</th><th scope="col" abbr="Friday">Fr</th><th scope="col" abbr="Saturday">Sa</th></tr></thead><tbody id="calendar-days"></tbody></table>
+        <ul class="calendar-key"><li><span class="key-available"></span>Available</li><li><span class="key-blocked"></span>Unavailable</li><li><span class="key-picked"></span>Selected</li></ul>
+      </div>
+      <a class="text-link" href="https://www.thecapeescape.com/cape-san-blas-vacation-rentals/dune-reel-good/">Official Cape Escape listing →</a>
+    </div>
+    <div class="panel" id="inquiry">
+      <h2>Booking inquiry</h2>
+      <p>We’ll confirm availability and the final price before you book.</p>
+      <form name="booking-inquiry" method="POST" action="/success/" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="booking-inquiry">
+        <p hidden><label>Leave this field blank <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <fieldset id="inquiry-fields" disabled>
+          <div class="fields-pair">
+            <label>Check-in <input type="date" max="2099-12-31" name="check-in" id="arrival" required></label>
+            <label>Checkout <input type="date" max="2099-12-31" name="checkout" id="departure" required></label>
+          </div>
+          <p id="estimate" class="estimate" aria-live="polite">Select both dates for a nightly-rate estimate.</p>
+          <div class="fields-pair"><label>Name <input name="name" autocomplete="name" maxlength="120" required></label><label>Email <input type="email" name="email" autocomplete="email" maxlength="200" required></label></div>
+          <div class="fields-pair"><label>Guests <select name="guests" required><option value="">Select guests</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></label><label>Phone <span class="optional">(optional)</span><input type="tel" name="phone" autocomplete="tel" maxlength="40"></label></div>
+          <label>Anything we should know? <span class="optional">(optional)</span><textarea name="message" rows="3" maxlength="2000"></textarea></label>
+          <input type="hidden" name="lodging-estimate" id="submitted-estimate">
+          <p id="form-status" class="form-status" role="status"></p>
+          <button type="submit" class="button">Send inquiry <span aria-hidden="true">→</span></button>
+        </fieldset>
+      </form>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div><a class="brand" href="../" aria-label="DuneReelGood home"><img src="../assets/favicon.svg" width="36" height="36" alt=""><span>DuneReel<span>Good</span></span></a><p>Cape San Blas, Florida</p></div>
+    <div><a href="https://www.google.com/maps/search/?api=1&query=135+Sand+Pine+Drive+Port+St+Joe+FL">135 Sand Pine Drive →</a><a href="https://www.thecapeescape.com/cape-san-blas-vacation-rentals/dune-reel-good/">Cape Escape listing →</a></div>
+    <div><a href="../guide/">Local guide</a><a href="../book/">Check availability</a></div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Manage the DuneReelGood availability calendar.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Owner Dashboard | DuneReelGood</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/site.css">
+  <script type="module" src="../assets/admin.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../" aria-label="DuneReelGood home"><img src="../assets/favicon.svg" width="36" height="36" alt=""><span>DuneReel<span>Good</span></span></a>
+    <nav aria-label="Main navigation"><a href="../#house">The house</a><a href="../#photos">Photos</a><a href="../guide/">Local guide</a><a class="button button-small" href="../book/">Check availability <span aria-hidden="true">→</span></a></nav>
+  </div>
+</header>
+<main id="main">
+  <div class="page-intro"><div class="wrap"><p class="eyebrow">DuneReelGood</p><h1>Owner dashboard.</h1><p>Manage the dates and lodging rates shown on the public calendar.</p></div></div>
+  <div class="wrap section-space">
+    <section class="panel owner-login" id="owner-login">
+      <h2>Sign in</h2>
+      <form id="login-form" method="post">
+        <label>Owner access key <input name="key" type="password" required minlength="32" autocomplete="current-password"></label>
+        <button class="button" type="submit">Unlock calendar</button>
+      </form>
+    </section>
+    <p id="owner-status" class="notice" role="status"></p>
+    <div id="owner-tools" hidden>
+      <div class="owner-toolbar"><p>Updates appear on the public calendar after you save.</p><div class="actions"><button id="owner-refresh" class="button button-muted" type="button">Reload</button><button id="owner-logout" class="button button-muted" type="button">Sign out</button></div></div>
+      <section class="panel owner-settings">
+        <h2>Calendar settings</h2>
+        <form id="settings-form">
+          <label>Default nightly rate (USD) <input name="base" type="number" min="1" max="99999.99" step=".01" placeholder="Leave blank for a quote"></label>
+          <label class="checkbox"><input type="checkbox" name="published"> Show available dates publicly</label>
+          <button class="button" type="submit">Save settings</button>
+        </form>
+      </section>
+      <section class="panel owner-overview">
+        <h2>Calendar preview</h2>
+        <p>Choose a blocked night to edit its reservation.</p>
+        <div class="calendar-nav">
+          <button id="owner-month-prev" class="round-button" type="button" aria-label="Previous month">←</button>
+          <h3 id="owner-month-label" aria-live="polite"></h3>
+          <button id="owner-month-next" class="round-button" type="button" aria-label="Next month">→</button>
+        </div>
+        <table class="calendar" aria-labelledby="owner-month-label"><thead><tr><th scope="col" abbr="Sunday">Su</th><th scope="col" abbr="Monday">Mo</th><th scope="col" abbr="Tuesday">Tu</th><th scope="col" abbr="Wednesday">We</th><th scope="col" abbr="Thursday">Th</th><th scope="col" abbr="Friday">Fr</th><th scope="col" abbr="Saturday">Sa</th></tr></thead><tbody id="owner-calendar-days"></tbody></table>
+      </section>
+      <div class="owner-grid">
+        <section class="panel">
+          <h2>Blocked dates</h2>
+          <p>The checkout date can be used by the next guest.</p>
+          <form id="block-form">
+            <div class="fields-pair"><label>First blocked night <input type="date" min="2000-01-01" max="2099-12-31" name="start" required></label><label>Checkout <input type="date" min="2000-01-01" max="2099-12-31" name="end" required></label></div>
+            <label>Status <select name="kind"><option value="booked">Booked</option><option value="blocked">Owner hold</option></select></label>
+            <label>Private label or note <input name="note" maxlength="180"></label>
+            <div class="actions"><button class="button" type="submit">Add date block</button><button class="button button-muted" type="button" data-cancel hidden>Cancel edit</button></div>
+          </form>
+          <ul class="owner-list" id="block-list"></ul>
+        </section>
+        <section class="panel">
+          <h2>Seasonal rates</h2>
+          <p>Each range includes its last night. New rates replace any overlapping nights.</p>
+          <form id="rate-form">
+            <div class="fields-pair"><label>First night <input type="date" min="2000-01-01" max="2099-12-31" name="start" required></label><label>Last night <input type="date" min="2000-01-01" max="2099-12-31" name="end" required></label></div>
+            <label>Nightly rate (USD) <input name="amount" type="number" required min="1" max="99999.99" step=".01"></label>
+            <div class="actions"><button class="button" type="submit">Add seasonal rate</button><button class="button button-muted" type="button" data-cancel hidden>Cancel edit</button></div>
+          </form>
+          <ul class="owner-list" id="rate-list"></ul>
+        </section>
+      </div>
+    </div>
+    <noscript><p>Enable JavaScript to manage the calendar.</p></noscript>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div><a class="brand" href="../" aria-label="DuneReelGood home"><img src="../assets/favicon.svg" width="36" height="36" alt=""><span>DuneReel<span>Good</span></span></a><p>Cape San Blas, Florida</p></div>
+    <div><a href="https://www.google.com/maps/search/?api=1&query=135+Sand+Pine+Drive+Port+St+Joe+FL">135 Sand Pine Drive →</a><a href="https://www.thecapeescape.com/cape-san-blas-vacation-rentals/dune-reel-good/">Cape Escape listing →</a></div>
+    <div><a href="../guide/">Local guide</a><a href="../book/">Check availability</a></div>
+  </div>
+</footer>
+</body>
+</html>
