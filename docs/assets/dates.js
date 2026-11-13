@@ -47,7 +47,7 @@ export function calculateStay(data, start, end, today) {
   if (start < today) return {error: 'Choose a check-in date today or later.'};
   if (end <= start) return {error: 'Checkout must be after check-in.'};
   const nights = (Date.parse(end) - Date.parse(start)) / dayMs;
-  if (nights > 365) return {error: 'For stays over 365 nights, contact Cape Escape.'};
+  if (nights > 365) return {error: 'Please choose a stay of 365 nights or fewer.'};
   if (!data.published) return {nights, total: null};
   let total = 0;
   let complete = true;

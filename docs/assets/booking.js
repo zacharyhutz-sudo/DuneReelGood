@@ -139,7 +139,7 @@ async function init() {
       'Online availability is awaiting an update. You can still inquire about your dates.';
     drawCalendar();
   } catch {
-    calendarStatus.textContent = 'The online calendar and inquiry form are unavailable here. Please use the Cape Escape listing.';
+    calendarStatus.textContent = 'The online calendar is temporarily unavailable. Please refresh the page or try again later.';
   }
 }
 
@@ -181,7 +181,7 @@ form.addEventListener('submit', async event => {
     if (!response.ok) throw new Error('Could not submit inquiry.');
     window.location.assign(new URL('../success/', window.location.href));
   } catch {
-    formStatus.textContent = 'Your inquiry could not be sent. Try again or use the Cape Escape listing.';
+    formStatus.textContent = 'Your inquiry could not be sent. Please try again.';
   } finally {
     submit.disabled = false;
   }
