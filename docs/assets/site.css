@@ -362,3 +362,19 @@ form input[type=date]{appearance:none;-webkit-appearance:none;min-width:0}
   .stay-summary p{font-size:.69rem}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+
+/* Quiet, one-time entrance effects for editorial content only. JS enables these
+   for below-the-fold elements, so content remains visible if JS cannot run. */
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-reveal {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+    transition: opacity 650ms ease-out, transform 750ms cubic-bezier(.22, 1, .36, 1),
+      border-color 200ms ease, box-shadow 200ms ease;
+    transition-delay: var(--scroll-reveal-delay, 0ms), var(--scroll-reveal-delay, 0ms), 0ms, 0ms;
+  }
+  .scroll-reveal.scroll-reveal--visible {
+    opacity: 1;
+    transform: none;
+  }
+}

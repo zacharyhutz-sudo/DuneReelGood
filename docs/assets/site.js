@@ -75,3 +75,49 @@ async function loadReviews() {
     // The gallery and booking links remain available if the reviews file cannot load.
   }
 }
+
+// Progressive enhancement: reveal editorial sections once as they enter the viewport.
+// Above-the-fold content stays visible; reduced-motion and older browsers get no effects.
+function initScrollReveals() {
+  if (!('IntersectionObserver' in window) ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const groups = [
+    { selector: '.stat-list li', stagger: 55 },
+    { selector: '.feature-photo, .feature-copy', stagger: 85 },
+    { selector: '.amenity-grid > div', stagger: 65 },
+    { selector: '#photos .section-head' },
+    { selector: '#gallery-preview > figure', stagger: 60 },
+    { selector: '.gallery-more' },
+    { selector: '.home-cta > .wrap' },
+    { selector: '.guide-list .guide-section-heading' },
+    { selector: '.guide-list .guide-card', stagger: 65 },
+    { selector: '.guide-ending' }
+  ];
+
+  const observer = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      entry.target.classList.add('scroll-reveal--visible');
+      observer.unobserve(entry.target);
+    }
+  }, { rootMargin: '0px 0px -7% 0px', threshold: 0.05 });
+
+  const firstViewport = window.innerHeight * 0.95;
+  for (const { selector, stagger = 0 } of groups) {
+    document.querySelectorAll(selector).forEach((element, index) => {
+      // Keep initial, linked-to, and collapsed content immediately accessible.
+      if (element.closest('[hidden], details:not([open])')) return;
+      const bounds = element.getBoundingClientRect();
+      if (bounds.top <= firstViewport || bounds.bottom <= 0) return;
+
+      if (stagger) {
+        element.style.setProperty('--scroll-reveal-delay', `${(index % 3) * stagger}ms`);
+      }
+      element.classList.add('scroll-reveal');
+      observer.observe(element);
+    });
+  }
+}
+
+initScrollReveals();
