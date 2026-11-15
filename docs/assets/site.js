@@ -86,6 +86,8 @@ function initScrollReveals() {
     { selector: '.stat-list li', stagger: 55 },
     { selector: '.feature-photo, .feature-copy', stagger: 85 },
     { selector: '.amenity-grid > div', stagger: 65 },
+    { selector: '.stay-details-heading' },
+    { selector: '.stay-details-grid > div', stagger: 65 },
     { selector: '#photos .section-head' },
     { selector: '#gallery-preview > figure', stagger: 60 },
     { selector: '.gallery-more' },

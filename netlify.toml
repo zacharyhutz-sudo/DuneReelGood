@@ -14,3 +14,14 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     X-Frame-Options = "DENY"
+
+# Meta robots tags remain in HTML; these headers are a second layer of defense.
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/success/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"

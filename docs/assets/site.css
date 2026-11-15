@@ -378,3 +378,22 @@ form input[type=date]{appearance:none;-webkit-appearance:none;min-width:0}
     transform: none;
   }
 }
+
+
+/* SEO content enhancements: quiet editorial styling, aligned to existing design. */
+.stay-details{padding-block:clamp(50px,6vw,82px);border-bottom:1px solid var(--line)}
+.stay-details-heading{max-width:72ch}
+.stay-details-heading h2,.booking-notes h2{font:500 clamp(2rem,3.8vw,3.2rem)/1.16 var(--serif);letter-spacing:-.04em;margin:10px 0 14px}
+.stay-details-heading>p:last-child,.booking-notes-intro>p:last-child{color:var(--sub);line-height:1.8}
+.stay-details-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,3vw,40px);margin-top:32px}
+.stay-details-grid>div{border-top:1px solid var(--line);padding-top:22px}
+.stay-details-grid h3,.booking-notes-grid h3{font:600 1.22rem/1.4 var(--serif);margin-bottom:8px}
+.stay-details-grid p,.booking-notes-grid p{color:var(--sub);font-size:.91rem;line-height:1.75}
+.guide-context{padding-top:30px;max-width:1200px}
+.guide-context p{max-width:78ch;color:var(--sub);font-size:1rem;line-height:1.8}
+.guide-context a,.booking-notes a{font-weight:600;text-underline-offset:4px}
+.booking-notes{padding-block:0 clamp(60px,8vw,100px)}
+.booking-notes-intro{max-width:65ch}
+.booking-notes-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 45px;margin-top:28px}
+.booking-notes-grid>div{border-top:1px solid var(--line);padding-top:20px}
+@media(max-width:650px){.stay-details-grid,.booking-notes-grid{grid-template-columns:1fr;gap:22px}.stay-details-grid{margin-top:24px}.booking-notes-grid{margin-top:24px}.guide-context{padding-top:24px}}
